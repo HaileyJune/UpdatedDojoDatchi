@@ -1,0 +1,32 @@
+@{
+    ViewData["Title"] = "Monster Page";
+}
+@using UpdatedDojoDatchi.Models
+@model MonsterObject
+<div class="container">
+<div class="row">
+<h1>Monster Mama</h1>
+</div>
+<div class="row">
+    <h5 style="display: inline">Fullness = @Model.Fullness |</h5>
+    <h5 style="display: inline"> Happiness = @Model.Happiness |</h5>
+    <h5 style="display: inline"> Meals = @Model.Meals |</h5>
+    <h5 style="display: inline"> Energy = @Model.Energy</h5>
+</div>
+<img src= @Url.Content(Model.img)>
+<p>@Model.Reaction</p>
+@if (@Model.isAlive)
+{
+<div class="row">
+    <a href="/monster/feed" class="button">Feed</a>
+    <a href="/monster/play" class="button">Play</a>
+    <a href="/monster/work" class="button">Work</a>
+    <a href="/monster/sleep" class="button">Sleep</a>
+</div>
+}
+else
+{
+    <a href="/monster/reset"  class="button">Get A New Monster</a>
+}
+</div>
+<a href="/logout"  class="button button-primary">Logout</a>

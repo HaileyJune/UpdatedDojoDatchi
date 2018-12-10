@@ -1,0 +1,50 @@
+@{
+    ViewData["Title"] = "Registration Page";
+}
+@using UpdatedLogReg.Models
+@model UserObject
+<div class="container">
+    <div class="row">
+<div class="one-half column">
+<h1>Introduce Yourself</h1>
+<form asp-action="DoesRegister" asp-controller="LogReg" method="POST">
+    
+    <span asp-validation-for="FirstName"></span>
+    <div></div>
+    <label asp-for="FirstName"></label>
+    <input asp-for="FirstName">
+    <div></div>
+
+    <span asp-validation-for="LastName"></span>
+    <div></div>
+    <label asp-for="LastName"></label>
+    <input asp-for="LastName">
+    <div></div>
+    
+    <span asp-validation-for="Email"></span>
+    <div></div>
+    <label asp-for="Email"></label>
+    <input asp-for="Email">
+    <div></div>
+    
+    <span asp-validation-for="Password"></span>
+    <div></div>
+    <label asp-for="Password"></label>
+    <input asp-for="Password">
+    <div></div>
+    
+    <span asp-validation-for="Confirm"></span>
+    <div></div>
+    <label asp-for="Confirm"></label>
+    <input asp-for="Confirm">
+    <div></div>
+
+    <input type="Submit" value="Sell Your Soul">
+</form>
+</div>
+
+<div class="one-half column">
+@Html.Partial("Login")
+</div>
+</div>
+</div>

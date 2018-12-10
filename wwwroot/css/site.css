@@ -1,0 +1,13 @@
+/*Write all of your CSS here*/
+
+.container {
+    text-align: center;
+}
+
+body {
+    background-color: #fdfdfd;
+}
+
+h1 {
+    color: #58d3e9;
+}

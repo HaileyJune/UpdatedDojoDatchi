@@ -1,0 +1,19 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+@using UpdatedLogReg.Models
+@model LoginUser
+<h1>We've Met Before</h1>
+<form asp-action="DoesLogin" asp-controller="LogReg" method="POST">
+<span asp-validation-for="email"></span>
+    <div></div>
+    <label asp-for="email"></label>
+    <input asp-for="email">
+    <div></div>
+    <span asp-validation-for="password"></span>
+    <div></div>
+    <label asp-for="password"></label>
+    <input asp-for="password" type="password">
+    <div></div>
+    <input type="Submit" value="Welcome Back">
+</form>
