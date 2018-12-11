@@ -49,7 +49,7 @@ namespace UpdatedDojoDatchi.Models
                 if (chances ==  0)
                 {
                     Reaction = "Your Monster didn't like their meal. Meals -1";
-                img = "~/images/feedimg2.gif";
+                img = "~/images/nopeimg.gif";
                 }
                 else
                 {
@@ -59,8 +59,15 @@ namespace UpdatedDojoDatchi.Models
                     {
                         Fullness = 100;
                     }
+                    if (amount > 7)
+                    {
+                        img = "~/images/feedimg.gif";
+                    }
+                    else
+                    {
+                        img = "~/images/feedimg2.gif";
+                    }
                     Reaction = $"You fed your Monster! Fullness +{amount}, Meals -1";
-                    img = "~/images/feedimg.gif";
                 }
             }
             checkAlive();
@@ -145,7 +152,7 @@ namespace UpdatedDojoDatchi.Models
                 isAlive = false;
                 Random rand = new Random();
             int src = rand.Next(0,2);
-    
+
             if (src == 0)
             {
                 img = "~/images/unhappyimg2.gif";                
@@ -155,6 +162,11 @@ namespace UpdatedDojoDatchi.Models
                 img = "~/images/unhappyimg3.gif";                
             }
                 Reaction = "Your Monster has died. You had one job.";
+            }
+
+            if (Fullness >= 100 || Happiness >= 100 || Energy >= 100)
+            {
+                img = "~/images/winimg.gif";                
             }
         }
         public void reset()

@@ -79,7 +79,7 @@ namespace UpdatedLogReg.Controllers
                 dbContext.Add(myMonster);
                 dbContext.SaveChanges();
 
-                return Redirect("/success"); //This doesn't exist yet
+                return Redirect("/monster"); //This doesn't exist yet
             }
         }
         // other code
